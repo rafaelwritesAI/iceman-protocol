@@ -1,31 +1,32 @@
 # Iceman Protocol: Intent Auditor
 
-> **"High-fidelity information extraction through intent alignment auditing."**
+> **"High-fidelity information extraction through strategic intent alignment."**
 
 ## Overview
-This is an experimental auditing engine designed to identify and mitigate **intent drift** and **probabilistic hallucinations** in Large Language Model (LLM) outputs. 
+The **Iceman Protocol** is a specialized auditing engine designed to intercept and mitigate **intent drift** and **probabilistic hallucinations** in Large Language Model (LLM) outputs. 
 
-While this Python implementation serves as a functional proof-of-concept for high-level intent filtering, true infrastructure auditing requires deep integration into the multi-layered stacks that power modern AI. This script demonstrates, in a general and superficial manner, the logic required to protect users from "lazy" or deceptive machine behaviors.
+While the core engines of modern LLMs (like Gemini, GPT, or Claude) are built on high-performance, low-level stacks (C++, CUDA, Rust), this protocol utilizes **Python as a Strategic Gatekeeper Layer**. This implementation demonstrates how high-precision auditing can be deployed at the orchestration level to purge "lazy" machine behaviors and engagement noise before they reach the end-user.
 
-## The Infrastructure Reality
-To move beyond superficial auditing, one must acknowledge the "Black Box" of Big Tech. Modern LLMs (like Gemini or ChatGPT) are built upon a brutalist architecture of high-performance languages. A robust auditor must eventually interface with:
+## The Infrastructure Context
+A robust auditor must be conscious of the multi-layered environments that power AI. The Iceman Protocol is designed to be **stack-agnostic**, acting as the final integrity check for data processed across:
 
-* **C++:** The backbone of performance. Essential for auditing memory management and the core execution engines where latency-induced drift begins.
-* **CUDA (NVIDIA):** The language of the GPU. Critical for inspecting how parallel computations and floating-point math contribute to hallucinations at the hardware level.
-* **Rust:** The emerging standard for memory safety. Auditing at this layer ensures that the model's integrity isn't compromised by low-level system vulnerabilities.
-* **Mojo / Triton:** Specialized languages for kernel-level optimization. Essential for monitoring real-time data density during the inference phase.
+* **C++ / Rust:** Core execution and memory management layers.
+* **CUDA (NVIDIA) / Triton:** Hardware-level parallel computation.
+* **Mojo:** Kernel-level optimization for inference.
+
+By positioning the audit at the **Post-Processing/Orchestration layer (Python)**, we achieve a universal "kill-switch" for hallucinations without the need to recompile low-level model kernels.
 
 ## Core Features
-* **Intent Drift Detection:** Identifies behavioral indicators that deviate from the user's primary information request.
-* **Noise Reduction Engine:** Strips conversational filler ("I believe", "Usually") and redundant engagement triggers designed for screen-time retention.
-* **Integrity Validation:** Compares original vs. cleaned outputs to calculate data density and reject low-fidelity responses.
-* **Vulnerability Safety Layer:** By cutting hallucinations at the source, it provides a protection layer for non-technical users against deceptive confidence in AI content.
+* **Intent Drift Detection:** Identifies behavioral indicators and linguistic patterns that deviate from the user's primary request.
+* **Noise Purge Engine:** Strips conversational filler and redundant engagement triggers (e.g., "I believe", "Usually", "Would you like to know more?").
+* **Integrity Validation:** Calculates data density and enforces a strict `rigor_threshold` (default: 0.99) to reject low-fidelity responses.
+* **Vulnerability Safety Layer:** Provides an essential protection barrier for non-technical users against deceptive machine confidence and high-risk hallucinations.
 
 ## Technical Implementation
-The `integrity_engine.py` script acts as a gatekeeper. It processes raw AI responses, flags "drift" indicators, and performs an automated purge of engagement noise to extract only the high-density factual core.
+The `integrity_engine.py` script serves as a functional gateway. It intercepts raw AI strings, flags uncertainty markers, and performs an automated cleanup to ensure only the high-density factual core is delivered.
 
 ## Roadmap
-- [x] Core Audit Logic (Python POC)
-- [ ] Multi-Model API Integration
-- [ ] Infrastructure Research (C++/CUDA hooks)
-- [ ] Advanced Fact Density Scoring
+- [x] Strategic Gatekeeper Logic (Python Implementation)
+- [ ] Multi-Model API Middleware Integration
+- [ ] Latency-Sensitive Infrastructure Research
+- [ ] Advanced Fact-Density Scoring Systems
